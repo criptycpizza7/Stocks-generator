@@ -33,7 +33,7 @@ while exit:
                 insert_request = 'insert into kursach_app_stocks ("time", price, change_percent, company_id) values(now(), %s, %s, %s)'
                 data_to_insert = []
                 for item in records:
-                    change_percent = random.triangular(-0.05, 0.07, 0.01) + 1
+                    change_percent = random.triangular(-0.01, 0.02, 0.01) + 1
                     new_data = (round(item['price'] * change_percent, 2), round(change_percent - 1, 4), item['company_id'])
                     data_to_insert.append(new_data)
                                 
